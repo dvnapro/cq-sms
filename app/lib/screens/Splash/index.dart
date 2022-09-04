@@ -13,17 +13,31 @@ class SplashScreen extends StatelessWidget {
       child: AnimatedSplashScreen(
         splash: Column(
           children: <Widget>[
+            const Spacer(
+              flex: 4,
+            ),
             Expanded(
               child: SvgPicture.asset('assets/cq-logo.svg',
-                  height: 100, width: 100),
+                  height: 250, width: 250),
             ),
-            const Text('CQ SMS'),
+            Container(
+              margin: const EdgeInsets.only(top: 5),
+              child: const Text(
+                'CQ SMS',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto',
+                    color: Color.fromARGB(255, 255, 90, 1),
+                    fontSize: 20),
+              ),
+            ),
+            const Spacer(flex: 4),
             const Text('WWW.CQ-SMS.COM')
           ],
         ),
         nextScreen: const MyHomePage(title: "CQ SMS"),
         pageTransitionType: PageTransitionType.fade,
-        splashIconSize: 100,
+        splashIconSize: 800,
         duration: 4000,
       ),
     );
